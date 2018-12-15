@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: tror
+server:
+  port: 8081
+  display-name: ${spring.application.name}
+  servlet:
+    context-path: /tror
+
+logging:
+  level:
+    root: debug

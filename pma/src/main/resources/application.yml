@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: pma
+server:
+  port: 8082
+  display-name: ${spring.application.name}
+  servlet:
+    context-path: /pma
