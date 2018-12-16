@@ -9,7 +9,7 @@ import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-//@EnableCircuitBreaker
+@EnableCircuitBreaker
 //@EnableDiscoveryClient
 public class ApiApplication {
 
@@ -30,6 +30,5 @@ public class ApiApplication {
 //                        .uri("http://localhost:8082"))
 //                .build();
 //    }
-
 }
 

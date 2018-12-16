@@ -20,6 +20,21 @@ spring:
         - Path=/hi
         filters:
         - PrefixPath=/pma
+        - name: Hystrix
+          args:
+            name: "PMA Circuit Breaker"
+            fallbackURI: forward:/pmaFallback
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
+#      circuitBreaker:
+#        errorThresholdPercentage: 50
+
 server:
   port: 8080
   display-name: ${spring.application.name}
@@ -28,5 +43,8 @@ server:
 
 logging:
   level:
-    root: debug
-    org.springframework.cloud.gateway: debug
+    root: info
+    # org.springframework.cloud.gateway: debug
+
+management.endpoints.web.exposure.include: "*"
+management.security.enabled: false
